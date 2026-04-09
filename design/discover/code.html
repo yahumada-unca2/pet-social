@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-width=1.0" name="viewport"/>
+<title>Discover - Pet Social</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&amp;family=Quicksand:wght@500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#FF6B6B",
+          "background-light": "#FFF8F0",
+          "surface": "#FFFFFF",
+          "text-main": "#2D3436",
+          "muted": "#A8A8B3",
+          "accent": "#FDCB6E",
+        },
+        fontFamily: {
+          "headings": ["Fredoka", "sans-serif"],
+          "body": ["Quicksand", "sans-serif"]
+        },
+        borderRadius: {
+            "card": "32px",
+            "button": "99px",
+            "input": "20px"
+        },
+        boxShadow: {
+            "soft": "0 8px 24px rgba(255, 107, 107, 0.15)",
+        }
+      },
+    },
+  }
+</script>
+<style>
+  body {
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+  }
+  .mobile-container {
+    width: 100%;
+    max-width: 480px;
+    background-color: #FFF8F0;
+    min-height: 100vh;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
+  }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body text-text-main antialiased">
+<div class="mobile-container">
+<!-- Sticky Search Header -->
+<div class="sticky top-0 z-10 bg-background-light pt-6 pb-4 px-4 shadow-soft">
+<label class="flex flex-col w-full h-14">
+<div class="flex w-full flex-1 items-stretch rounded-input h-full bg-surface border-2 border-transparent focus-within:border-accent transition-colors shadow-sm overflow-hidden">
+<div class="text-muted flex items-center justify-center pl-4 bg-surface" data-icon="search" data-size="24px" data-weight="regular">
+<span class="material-symbols-outlined" style="font-size: 24px;">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-input rounded-l-none border-none bg-surface focus:outline-0 focus:ring-0 focus:border-none h-full placeholder:text-muted px-4 pl-2 text-lg font-body font-semibold text-text-main leading-normal" placeholder="Looking for Good Boys..." value=""/>
+</div>
+</label>
+</div>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto pb-24 px-4 pt-2">
+<h2 class="font-headings font-bold text-2xl text-text-main mb-6 pl-2">Suggested Friends</h2>
+<div class="grid grid-cols-2 gap-4">
+<!-- Profile Card 1 -->
+<div class="bg-surface rounded-card p-4 flex flex-col items-center text-center shadow-sm">
+<div class="w-20 h-20 rounded-full border-4 border-accent mb-3 overflow-hidden bg-background-light" data-alt="a fluffy golden retriever puppy sitting in a sunny grassy field looking directly at the camera with a happy expression" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA1F3rLzqeJ0VYZgnzNl2Jpn_Rg0MCr51IjyV56lGrC-54YqfvQ9GlqZQvcjVO8ezJlkcXsmNbQbU4jLXxX0PMfGx67NUZkEp4p3RYlWAMsZYOtzDnnsY-2fij1Rac5qlJcG9ehjW1yp6Vbuk8bO_Z-mHhi0qAldpdQ38HLq2sIP5RvkuI_2soFp60yPHiLAsDqT3XFYbZWScf0U8FrUxSYPElWR5WDGKVQX3HBCCxf4Qd9Lt6mFTQ995DrlyHMX3KnbE1rymBvdWs'); background-size: cover; background-position: center;"></div>
+<h3 class="font-headings font-bold text-lg text-text-main leading-tight mb-1">Barnaby</h3>
+<p class="text-sm font-body font-medium text-muted mb-4">Golden Retriever</p>
+<button class="w-full bg-primary hover:bg-opacity-90 text-surface font-headings font-semibold text-base py-2 px-4 rounded-button transition-transform active:scale-95 shadow-sm">
+                    Follow
+                </button>
+</div>
+<!-- Profile Card 2 -->
+<div class="bg-surface rounded-card p-4 flex flex-col items-center text-center shadow-sm">
+<div class="w-20 h-20 rounded-full border-4 border-accent mb-3 overflow-hidden bg-background-light" data-alt="close up of a grumpy looking orange tabby cat with bright green eyes indoors near a window" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDHzz0n8lL2rarF3z3pIyqdruyj6OBC0OdRv0SHerMZfufN7OvklPWYGlPmW05paYUsO-q1BGVbVqcclzbOdCa-qIlusbHT7u-ENsChwmbyAnyqQAaVyIYM5drolNC4GAHPMjgkuSHxd09pFMECWRnAlezTQnuyxgmEsTzKWjjq0nnzGKj-LH69nXmMYPPvRHvQQicnKu45Hd9MMPc2T-3hL5LjGEFUYjCUDEbGDWZWxqgraiJQu9H3oRVB0OG9symGL71zK-zehy8'); background-size: cover; background-position: center;"></div>
+<h3 class="font-headings font-bold text-lg text-text-main leading-tight mb-1">Marmalade</h3>
+<p class="text-sm font-body font-medium text-muted mb-4">Orange Tabby</p>
+<button class="w-full bg-surface border-2 border-muted text-muted font-headings font-semibold text-base py-2 px-4 rounded-button transition-transform active:scale-95">
+                    Following
+                </button>
+</div>
+<!-- Profile Card 3 -->
+<div class="bg-surface rounded-card p-4 flex flex-col items-center text-center shadow-sm">
+<div class="w-20 h-20 rounded-full border-4 border-accent mb-3 overflow-hidden bg-background-light" data-alt="a small black pug wearing a tiny red bandana sitting on a hardwood floor" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAsFE9_Sm7ctk6TkjcPnCfpHL13sNGDyuEdOmffiP2qSW9WpHRzGjpu57VPiDuP_OOiFAspXKc09RHjK5SNWD0PbXnlAIECyw7juGNMkwoQIhOoqhUE9hyV04SF9vAx5mr8dW08Uh2L_iCe_SG_xCpQffr0343nVWyh6MnqktN5fC_x5zoRe6hvryfihnve2iKq9al3dcdG1yj14FWKAFqX-oz8olHv1jDH2T1Gq8XsSBoojQgR4PS7bOT2eEPKd6RnddpldxBAShM'); background-size: cover; background-position: center;"></div>
+<h3 class="font-headings font-bold text-lg text-text-main leading-tight mb-1">Pugsley</h3>
+<p class="text-sm font-body font-medium text-muted mb-4">Pug</p>
+<button class="w-full bg-primary hover:bg-opacity-90 text-surface font-headings font-semibold text-base py-2 px-4 rounded-button transition-transform active:scale-95 shadow-sm">
+                    Follow
+                </button>
+</div>
+<!-- Profile Card 4 -->
+<div class="bg-surface rounded-card p-4 flex flex-col items-center text-center shadow-sm">
+<div class="w-20 h-20 rounded-full border-4 border-accent mb-3 overflow-hidden bg-background-light" data-alt="a white fluffy samoyed dog mid run in a snowy landscape with tongue out" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCpf7-XsdU_B5HmXlbm8ED_lpvV4jIFkmssGGd5jB7dtWoNBnJv1nhnaAFp2FU-8ygbEgmxZVnyzE5L-WGFlUgPRwd3iCEQzvE-LCpJ6Utt2WsAoZNei2p7Mvl2kcsdamPTmJXle0bf_UQ0LTMp5juvbOCVtnyZoX5eK0VynjXr9pdchOMXrf27NLvUp6bRxUWO8tR55S480UKm5lXTpzfcLCbePPLLL_3eEUncsj1CvjQp2lSjVmZRXbUIpjN09if-BU8AK2ESu0E'); background-size: cover; background-position: center;"></div>
+<h3 class="font-headings font-bold text-lg text-text-main leading-tight mb-1">Snowball</h3>
+<p class="text-sm font-body font-medium text-muted mb-4">Samoyed</p>
+<button class="w-full bg-primary hover:bg-opacity-90 text-surface font-headings font-semibold text-base py-2 px-4 rounded-button transition-transform active:scale-95 shadow-sm">
+                    Follow
+                </button>
+</div>
+<!-- Profile Card 5 -->
+<div class="bg-surface rounded-card p-4 flex flex-col items-center text-center shadow-sm">
+<div class="w-20 h-20 rounded-full border-4 border-accent mb-3 overflow-hidden bg-background-light" data-alt="a sleek grey siamese cat sitting elegantly on a velvet cushion" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAS8i9b-XsBK2ftavHewSykfEBkxBnuFObJMMRW8Vz0S-0hcfENLPL0L1y69f-z21fCk2DlLW9tgV-9gy8u9EIn8S1i-0yDWIEgF_tfPnYsIMsSn19i5dcwlShtS5nzV5xgTwDGMIxvy6-_1Ym90YBTX1X0qcgr2sc6tECTuYKrCPHUhXMXuC0tJ21CDZYXOgJ43nm2sCOH82anW2ebtJQ1RJFDcG8MXqER-0k_ShPvRvWK-I_jsVL-T47JmDdHaplqg1W34XxGLHA'); background-size: cover; background-position: center;"></div>
+<h3 class="font-headings font-bold text-lg text-text-main leading-tight mb-1">Duchess</h3>
+<p class="text-sm font-body font-medium text-muted mb-4">Siamese</p>
+<button class="w-full bg-primary hover:bg-opacity-90 text-surface font-headings font-semibold text-base py-2 px-4 rounded-button transition-transform active:scale-95 shadow-sm">
+                    Follow
+                </button>
+</div>
+<!-- Profile Card 6 -->
+<div class="bg-surface rounded-card p-4 flex flex-col items-center text-center shadow-sm">
+<div class="w-20 h-20 rounded-full border-4 border-accent mb-3 overflow-hidden bg-background-light" data-alt="a happy corgi puppy with large ears sitting next to a colorful squeaky toy" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAb3g9NGRExOTcRjIgSrNd8Z6oSxp4p1_NyszVJ0jGhfhQhR78U5I3ksgvTUnXMxKJz4YE3K60xLxf_rXzMZaPm0PkM8aK8Nma-GYxOdiXdc_rYNydJFjNDSVjFlcI_7AnX_k9H1PC8niJZaIKwFNEUyHS-LPr-mnrHR1SesTw_EADu6mwB_I2Dvg8heY_5gyidT5daS9_Q7pDiarexCVZke6KNTTmbuhfOTmJYWUDXgKsrnSm2U96rGNqdz1QvpU91H26jmyygYKI'); background-size: cover; background-position: center;"></div>
+<h3 class="font-headings font-bold text-lg text-text-main leading-tight mb-1">Waffles</h3>
+<p class="text-sm font-body font-medium text-muted mb-4">Corgi</p>
+<button class="w-full bg-primary hover:bg-opacity-90 text-surface font-headings font-semibold text-base py-2 px-4 rounded-button transition-transform active:scale-95 shadow-sm">
+                    Follow
+                </button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Shared Component - Applied as this is a browsing destination) -->
+<div class="fixed bottom-0 w-full max-w-[480px] bg-background-light pt-2 pb-6 px-4 rounded-t-3xl shadow-[0_-4px_24px_rgba(0,0,0,0.05)] border-t border-accent/20 z-20">
+<div class="flex justify-around items-center h-14">
+<a class="flex flex-col items-center justify-center w-12 h-12 text-muted hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 28px;">home</span>
+</a>
+<a class="flex flex-col items-center justify-center w-12 h-12 text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 28px; font-variation-settings: 'FILL' 1;">search</span>
+</a>
+<div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-surface -mt-8 shadow-soft cursor-pointer hover:scale-105 transition-transform">
+<span class="material-symbols-outlined" style="font-size: 32px;">add</span>
+</div>
+<a class="flex flex-col items-center justify-center w-12 h-12 text-muted hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 28px;">notifications</span>
+</a>
+<a class="flex flex-col items-center justify-center w-12 h-12 text-muted hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 28px;">person</span>
+</a>
+</div>
+</div>
+</div>
+</body></html>

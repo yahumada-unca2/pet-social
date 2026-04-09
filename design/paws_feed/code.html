@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pet Social - Paws Feed</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f53d3d",
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#221010",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Spline Sans", sans-serif;
+            background-color: #f8f5f5;
+            color: #2D3436;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* App Wrapper for Mobile Constraints */
+        .app-wrapper {
+            max-width: 480px;
+            margin: 0 auto;
+            min-height: 100vh;
+            background-color: #f8f5f5;
+            position: relative;
+            box-shadow: 0 0 40px rgba(0,0,0,0.05);
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Post Card Styles */
+        .post-card {
+            background-color: #FFFFFF;
+            border-radius: 2rem; /* Using xl roughly */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            margin: 1rem;
+            overflow: hidden;
+            border: 2px solid rgba(0,0,0,0.02);
+        }
+
+        .post-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Floating Action Button */
+        .fab {
+            width: 64px;
+            height: 64px;
+            box-shadow: 0 8px 24px rgba(245, 61, 61, 0.3);
+            transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .fab:active {
+            transform: scale(0.9) translateY(4px);
+            box-shadow: 0 2px 8px rgba(245, 61, 61, 0.4);
+        }
+
+        /* Interactive Elements */
+        .action-button {
+            transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .action-button:active {
+            transform: scale(0.85);
+        }
+        
+        /* Main content area padding for bottom nav */
+        .main-content {
+            padding-bottom: 90px; /* Space for bottom nav */
+            flex-grow: 1;
+            overflow-y: auto;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-gray-100 flex justify-center items-start min-h-screen">
+<div class="app-wrapper">
+<!-- Sticky Header -->
+<header class="sticky top-0 z-50 bg-white shadow-sm flex items-center justify-between p-4 rounded-b-xl border-b border-gray-100">
+<h1 class="text-[#2D3436] text-2xl font-bold font-display tracking-tight ml-2">Pet Social</h1>
+<button class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-50 text-[#2D3436] action-button relative">
+<span class="material-symbols-outlined text-2xl" data-icon="notifications">notifications</span>
+<span class="absolute top-3 right-3 w-3 h-3 bg-primary rounded-full border-2 border-white"></span>
+</button>
+</header>
+<!-- Main Feed Content -->
+<main class="main-content">
+<!-- Post 1 -->
+<article class="post-card">
+<!-- User Info -->
+<div class="flex items-center gap-3 p-4 pb-2">
+<img alt="Avatar of Bella the Beagle" class="w-12 h-12 rounded-full object-cover border-2 border-primary/20" data-alt="Close up of a cute beagle puppy face" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCapVN9aaCReqvaw2PGII5FvjU0i_NE-aSLegrrNu2hdreMmoD2AghDDCEcSh0hzfzxNHLsrh6ciA7yHwM_2qMJIYAjRr_bQ3f7TSOyokm6auGMLyhBSAo0KlyuCAZduIuAZT60EeYFI3lWAVBZQuxgzjX81RvAGM1x8zSWUtERwCEQQmGzab2zqMr8ecyEXrdikUx50MQvPYbPwgkcdMwv8u6qfI7ceSZtxt7hd3hJMRjs0UrOImb5UFXEW0TM8oiXrYDpZxEz12k"/>
+<div class="flex-1">
+<h2 class="font-bold text-[#2D3436] text-lg leading-tight">Bella the Beagle</h2>
+<p class="text-sm text-gray-500 font-medium">2 hours ago</p>
+</div>
+<button class="text-gray-400 p-2 action-button">
+<span class="material-symbols-outlined" data-icon="more_horiz">more_horiz</span>
+</button>
+</div>
+<!-- Post Image -->
+<div class="px-3 relative group">
+<img alt="Beagle playing in the park" class="post-image" data-alt="A happy beagle dog running through a sunny green park with tongue out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3soDsVzlQcy2LPVC-en9f4vEbOFg4753MTKcPgaEAHWDoIRDlL3hXw2oFsgpwkzMdSC4YoYCFoYANP27rzYcPUOW6ESH-luNFnbWrMOkhpdgQJeM2t2L43tJTnoXc32EJmjW0zDTzBdhbA5GU2WfAPGcMCV9RDI6ks1nYXaE25PzlTX4aNRJgNzuAQFgHrQl6hJwjnKL8tofMIi7p-IUEJtWXHGVxI5FcUO2bn-YR_4u99z4A9hgZPxBSagnRP2RvKy-56c3gu1w"/>
+</div>
+<!-- Action Bar -->
+<div class="px-4 py-3">
+<div class="flex items-center gap-4 mb-2">
+<button class="flex items-center gap-1 text-primary action-button">
+<span class="material-symbols-outlined icon-fill text-3xl" data-icon="favorite" data-weight="fill">favorite</span>
+</button>
+<button class="flex items-center gap-1 text-[#2D3436] action-button">
+<span class="material-symbols-outlined text-3xl" data-icon="chat_bubble_outline">chat_bubble_outline</span>
+</button>
+<button class="flex items-center gap-1 text-[#2D3436] action-button ml-auto">
+<span class="material-symbols-outlined text-2xl" data-icon="send">send</span>
+</button>
+</div>
+<p class="font-bold text-[#2D3436] mb-1">124 Likes</p>
+<p class="text-[#2D3436] leading-snug"><span class="font-bold mr-1">Bella the Beagle</span>Borking at the mailman! Best morning ever. 🐾🎾</p>
+<button class="text-gray-500 text-sm mt-1 font-medium">View all 12 comments</button>
+</div>
+</article>
+<!-- Post 2 -->
+<article class="post-card">
+<!-- User Info -->
+<div class="flex items-center gap-3 p-4 pb-2">
+<img alt="Avatar of Mittens" class="w-12 h-12 rounded-full object-cover border-2 border-primary/20" data-alt="Close up of a fluffy orange tabby cat face" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTRGydECcRKmsl_gEgcdfOL3XnLizu5rvTVlv8E8RmxKRG3G-nOwNrnX4cBkVlbmN1te_8b2aVXxaMCoj-nlaxk304zCMC0zZlidTsc5Wmv5l7r_BCiVz7PjCa54dRF34BBaY_ua19v4UTRZ3WS35oVV6XTfHPFJ86Trg3Z6xsz2oEoiI-9s4fQIWtSuLTSmRSwoZkJk75h3BVvI1zyY9dQADRpS3p0iOaatObfMW7TY5SvQp1DbJUnkNpDZ-Pu35-iXDJWCi45iM"/>
+<div class="flex-1">
+<h2 class="font-bold text-[#2D3436] text-lg leading-tight">Mittens</h2>
+<p class="text-sm text-gray-500 font-medium">5 hours ago</p>
+</div>
+<button class="text-gray-400 p-2 action-button">
+<span class="material-symbols-outlined" data-icon="more_horiz">more_horiz</span>
+</button>
+</div>
+<!-- Post Image -->
+<div class="px-3">
+<img alt="Cat sleeping in a sunbeam" class="post-image" data-alt="An orange fluffy cat curled up asleep in a bright warm rectangular sunbeam on a wooden floor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb7_LmAonQlv1v6SAZBltxEyD_9dYzj2tu6bGGE0Wbeo3Hcl-OxevIEr-4wOVVluGurEaxZ1W9k-3NmKA56X5aMus_xE2xLG9LzZ4ZJkAmzmUMfhBQZPOkL-U4bT3Je2KTBJy6UC4IbKozqHFdx-SVji2GkCGYPDx3xYIsrT1gtLgQX7nYd4WjHgrulCqBn8lJaRuLLChIU_scbgIjEe74sfhBQRFJh9pgX-PNN1zjlg0C3JanJf-knOoBeZNIbLxfK0UAqqJkPTc"/>
+</div>
+<!-- Action Bar -->
+<div class="px-4 py-3">
+<div class="flex items-center gap-4 mb-2">
+<button class="flex items-center gap-1 text-[#2D3436] action-button">
+<span class="material-symbols-outlined text-3xl" data-icon="favorite_border">favorite_border</span>
+</button>
+<button class="flex items-center gap-1 text-[#2D3436] action-button">
+<span class="material-symbols-outlined text-3xl" data-icon="chat_bubble_outline">chat_bubble_outline</span>
+</button>
+<button class="flex items-center gap-1 text-[#2D3436] action-button ml-auto">
+<span class="material-symbols-outlined text-2xl" data-icon="send">send</span>
+</button>
+</div>
+<p class="font-bold text-[#2D3436] mb-1">89 Likes</p>
+<p class="text-[#2D3436] leading-snug"><span class="font-bold mr-1">Mittens</span>Found the warm square. Do not disturb until dinner. ☀️💤</p>
+<button class="text-gray-500 text-sm mt-1 font-medium">View all 4 comments</button>
+</div>
+</article>
+</main>
+<!-- Floating Action Button -->
+<button class="fab absolute right-6 bottom-24 bg-primary text-white rounded-full flex items-center justify-center z-40 border-4 border-white/20">
+<span class="material-symbols-outlined text-4xl" data-icon="add">add</span>
+</button>
+<!-- Shared Component: BottomNavBar -->
+<div class="fixed bottom-0 w-full max-w-[480px] z-50">
+<div class="flex gap-2 border-t-2 border-gray-100 bg-white px-4 pb-6 pt-3 rounded-t-3xl shadow-[0_-10px_20px_rgba(0,0,0,0.02)]">
+<a class="just flex flex-1 flex-col items-center justify-end gap-1 rounded-full text-primary" href="#">
+<div class="text-primary flex h-8 items-center justify-center" data-icon="home" data-size="28px" data-weight="fill">
+<span class="material-symbols-outlined icon-fill text-[28px]" data-icon="home" data-weight="fill">home</span>
+</div>
+<span class="text-[10px] font-bold text-primary">Feed</span>
+</a>
+<a class="just flex flex-1 flex-col items-center justify-end gap-1 text-gray-400" href="#">
+<div class="text-gray-400 flex h-8 items-center justify-center action-button" data-icon="search" data-size="28px" data-weight="regular">
+<span class="material-symbols-outlined text-[28px]" data-icon="search">search</span>
+</div>
+<span class="text-[10px] font-bold">Discover</span>
+</a>
+<a class="just flex flex-1 flex-col items-center justify-end gap-1 text-gray-400" href="#">
+<div class="text-gray-400 flex h-8 items-center justify-center action-button" data-icon="person" data-size="28px" data-weight="regular">
+<span class="material-symbols-outlined text-[28px]" data-icon="person">person</span>
+</div>
+<span class="text-[10px] font-bold">Profile</span>
+</a>
+</div>
+</div>
+</div>
+</body></html>

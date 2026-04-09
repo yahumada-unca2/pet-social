@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pet Social - Auth Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&amp;family=Quicksand:wght@500;600;700&amp;family=Spline+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f53d3d",
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#221010",
+                        "coral": "#FF6B6B",
+                        "cream": "#FFF8F0",
+                        "surface": "#FFFFFF",
+                        "charcoal": "#2D3436",
+                        "muted": "#A8A8B3",
+                        "sunny": "#FDCB6E",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"],
+                        "headings": ["Fredoka", "sans-serif"],
+                        "body": ["Quicksand", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem", 
+                        "lg": "2rem", 
+                        "xl": "3rem", 
+                        "full": "9999px",
+                        "input": "20px"
+                    },
+                    boxShadow: {
+                        "soft": "0 8px 24px rgba(255, 107, 107, 0.15)",
+                        "button": "0 4px 0 rgba(200, 50, 50, 1)",
+                        "button-google": "0 4px 0 #E5B863"
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #f3f4f6; /* Outer background for desktop viewing */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .mobile-container {
+            width: 100%;
+            max-width: 480px;
+            min-height: 100vh;
+            background-color: #FFF8F0; /* Cream background */
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        @media (min-width: 481px) {
+            .mobile-container {
+                min-height: 850px;
+                border-radius: 40px;
+                margin: 20px 0;
+            }
+        }
+        
+        /* Tactile Button Animations */
+        .btn-tactile {
+            transition: transform 0.1s ease, box-shadow 0.1s ease;
+        }
+        .btn-tactile:active {
+            transform: translateY(4px);
+            box-shadow: 0 0px 0 transparent !important;
+        }
+
+        /* Input styling overrides */
+        input[type="email"], input[type="password"] {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+        }
+        input::placeholder {
+            color: #A8A8B3;
+            font-weight: 600;
+        }
+
+        /* Shake Animation for Error */
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+            20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
+        .error-shake {
+            animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+            border-color: #FF6B6B !important;
+            background-color: #FFF0F0 !important;
+        }
+
+        /* Bouncing Paw Animation for Loading */
+        @keyframes bounce-paw {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-10px) scale(1.1); }
+        }
+        .paw-bounce {
+            animation: bounce-paw 0.6s infinite ease-in-out;
+            display: inline-block;
+        }
+        .paw-bounce:nth-child(2) { animation-delay: 0.1s; }
+        .paw-bounce:nth-child(3) { animation-delay: 0.2s; }
+
+        /* Initial Hide Classes for JS-less state demonstration */
+        .loading-state, .error-message {
+            display: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body>
+<div class="mobile-container">
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col px-6 py-8 justify-center items-center h-full relative z-10 w-full max-w-md mx-auto">
+<!-- Logo Section -->
+<div class="w-full text-center mb-8 mt-4">
+<h1 class="font-headings text-[42px] font-bold text-coral tracking-tight leading-none transform -rotate-3 inline-block drop-shadow-sm">
+                    Pet Social
+                </h1>
+</div>
+<!-- Hero Illustration -->
+<div class="w-full max-w-[240px] aspect-square mb-10 relative">
+<!-- Using a placeholder background image styled to look like an illustration -->
+<div class="w-full h-full bg-center bg-no-repeat bg-contain rounded-[32px]" data-alt="cute playful orange tabby cat looking up with big eyes, brightly lit, vibrant colors, isolated on light background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAOPJ9_sAwL5402yruujbPnHs519rfyzj89-FZseKDH9yYUqZsxptQB9u-tT2-89RZlVLeXSiFl-7rLAnG4TEzMKXjKh9NvMZGjlJUdU1qr2rBiK7UWvtfpl43u93S9VW2acPgO5p6tHHKiXkvD7IF9uRDcCVVxNzoJQ8vSgSC4Bg6m_OkkNVPF3c-m_8Hl1GPG_ChtvZqADriRTtH17J0LGcrfoH14BlXaO8MHMSJxAXrUXr47YDcABZFYRvje_jYiSj1ZrlLfNac");'>
+</div>
+<!-- Decorative floating elements -->
+<span class="material-symbols-outlined absolute -top-2 -right-4 text-sunny text-4xl transform rotate-12" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="material-symbols-outlined absolute bottom-4 -left-6 text-coral text-3xl transform -rotate-12" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<!-- Auth Form -->
+<div class="w-full space-y-4 flex flex-col items-center">
+<!-- Input Group -->
+<div class="w-full space-y-4">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-muted">mail</span>
+<input class="w-full h-14 pl-12 pr-4 bg-surface border-2 border-transparent text-charcoal rounded-[20px] focus:outline-none focus:border-sunny focus:ring-0 text-base shadow-sm transition-all" placeholder="Enter your email" type="email" value=""/>
+</div>
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-muted">lock</span>
+<input class="w-full h-14 pl-12 pr-4 bg-surface border-2 border-transparent text-charcoal rounded-[20px] focus:outline-none focus:border-sunny focus:ring-0 text-base shadow-sm transition-all" placeholder="Enter your password" type="password" value=""/>
+<!-- Example of error state class: add 'error-shake' to the input and show below message -->
+<p class="error-message text-coral text-sm font-semibold mt-2 ml-2">Oops! Wrong password. Try again.</p>
+</div>
+</div>
+<!-- Primary Action Button -->
+<button class="btn-tactile w-full h-14 bg-coral text-white font-headings text-[18px] rounded-full shadow-[0_4px_0_#D9534F] relative mt-2 flex items-center justify-center" type="button">
+<span class="default-state">Log In</span>
+<!-- Loading State Example (Hidden by default) -->
+<div class="loading-state flex gap-2">
+<span class="material-symbols-outlined paw-bounce text-xl" style="font-variation-settings: 'FILL' 1;">pets</span>
+<span class="material-symbols-outlined paw-bounce text-xl" style="font-variation-settings: 'FILL' 1;">pets</span>
+<span class="material-symbols-outlined paw-bounce text-xl" style="font-variation-settings: 'FILL' 1;">pets</span>
+</div>
+</button>
+<!-- Divider -->
+<div class="w-full flex items-center gap-4 my-2">
+<div class="h-px bg-muted/30 flex-1"></div>
+<span class="text-muted font-bold text-sm uppercase tracking-wider">Or</span>
+<div class="h-px bg-muted/30 flex-1"></div>
+</div>
+<!-- Social Login Button -->
+<button class="btn-tactile w-full h-14 bg-surface text-charcoal font-headings text-[18px] rounded-full border-2 border-sunny shadow-[0_4px_0_#E5B863] flex items-center justify-center gap-3" type="button">
+<svg fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.56 12.25C22.56 11.47 22.49 10.72 22.36 10H12V14.26H17.92C17.66 15.63 16.88 16.8 15.71 17.58V20.34H19.28C21.36 18.42 22.56 15.6 22.56 12.25Z" fill="#4285F4"></path>
+<path d="M12 23C14.97 23 17.46 22.02 19.28 20.34L15.71 17.58C14.73 18.24 13.48 18.64 12 18.64C9.13 18.64 6.7 16.7 5.83 14.1H2.15V16.95C3.96 20.55 7.69 23 12 23Z" fill="#34A853"></path>
+<path d="M5.83 14.1C5.61 13.44 5.48 12.74 5.48 12C5.48 11.26 5.61 10.56 5.83 9.9V7.05H2.15C1.4 8.54 1 10.22 1 12C1 13.78 1.4 15.46 2.15 16.95L5.83 14.1Z" fill="#FBBC05"></path>
+<path d="M12 5.38C13.62 5.38 15.06 5.94 16.21 7.03L19.35 3.89C17.46 2.13 14.97 1 12 1C7.69 1 3.96 3.45 2.15 7.05L5.83 9.9C6.7 7.3 9.13 5.38 12 5.38Z" fill="#EA4335"></path>
+</svg>
+                    Continue with Google
+                </button>
+</div>
+<!-- Bottom Links -->
+<div class="mt-8 w-full flex flex-col items-center space-y-4">
+<a class="text-primary font-bold text-[15px] hover:opacity-80 transition-opacity" href="#">Forgot password?</a>
+<p class="text-charcoal font-semibold text-[15px]">
+                    New to the pack? 
+                    <a class="text-primary font-bold ml-1 hover:opacity-80 transition-opacity" href="#">Create account</a>
+</p>
+</div>
+</main>
+</div>
+</body></html>

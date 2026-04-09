@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pet Social - Pet Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f53d3d",
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#221010",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem", 
+                        "lg": "2rem", 
+                        "xl": "3rem", 
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'soft': '0 8px 24px rgba(245, 61, 61, 0.15)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Spline Sans', sans-serif;
+            background-color: #f8f5f5;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex justify-center items-start min-h-screen">
+<!-- Mobile Wrapper -->
+<div class="w-full max-w-[480px] bg-white min-h-screen relative shadow-2xl overflow-x-hidden pb-20">
+<!-- Header / Cover Photo -->
+<div class="relative h-48 bg-[#FDCB6E] w-full" data-alt="a vibrant yellow gradient background with subtle paw print patterns" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCpq8xT5o8n2MOjJgRmqX-LVW0I6Iscpnm3b9RzDjMoOy569jdUnMp0LFe3KzrOiT2_QHXRNOJu5MciKG_T-hvIEwpK-tvdthhV1yTjNkHBUnoyYx4_-mBOg8N85ijamTm9VjcSgCDkIrPfyOjwy_EsODn4M7y2I38PEaziOqanN63pNb86-KMnM4TxKgSmkugO-fjyPMWNeKercqtIpfqxkmQX3ChfeSxofl_cETCuLkAjekAbI-bqyGRjiWaJj9dONJKfJHIHzvY'); background-size: cover; background-position: center;">
+<!-- Settings Gear -->
+<button class="absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-soft active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[#2D3436]">settings</span>
+</button>
+<button class="absolute top-4 left-4 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-soft active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[#2D3436]">arrow_back</span>
+</button>
+</div>
+<!-- Profile Info -->
+<div class="px-6 relative flex flex-col items-center -mt-16">
+<!-- Overlapping Avatar -->
+<div class="w-[120px] h-[120px] rounded-full border-[6px] border-white overflow-hidden bg-white shadow-soft relative z-10">
+<img alt="Pet Avatar" class="w-full h-full object-cover" data-alt="close-up of a happy corgi dog smiling with tongue out outdoors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjIXDB5AKobrLamMTjG6uHzIVhgAzwoHnnWZVWATqM3VRzBWeD5ey4OE0hvvkl4sbfFfPrR07I_joeZwFsXIR2yla3YWY55CUwrap6TUr4ncC7CpVf-UVxHFrFxytS7lX1mr1_FH-1zJt43eBy4NRbqpzpeK1yeKziiooVPx5X-eD-Kh132pQPzJBjRE38vaK1d-W51HZ5sRNAFWgkVsroTM7oVVxgxFJlS0W6PMdL0s76yU0Os6i_ETKyihlHEKf32XdDH7oJfB4"/>
+</div>
+<!-- Bio -->
+<div class="text-center mt-3">
+<h1 class="text-[32px] font-bold text-[#2D3436] tracking-tight leading-none">Barnaby</h1>
+<p class="text-[16px] font-semibold text-[#A8A8B3] mt-1">Pembroke Welsh Corgi • 2 years</p>
+<p class="text-[14px] text-[#2D3436] mt-3 font-medium px-4">Professional sock thief and full-time good boy. 🦴 Follow for daily sploots!</p>
+</div>
+<!-- Edit Button -->
+<button class="mt-6 bg-primary text-white font-bold text-[18px] py-3 px-8 rounded-full shadow-soft active:translate-y-1 transition-all w-full max-w-[280px]">
+                Edit Profile
+            </button>
+<div class="flex gap-8 mt-6 mb-2">
+<div class="text-center">
+<p class="text-xl font-bold text-[#2D3436]">42</p>
+<p class="text-sm font-medium text-[#A8A8B3]">Posts</p>
+</div>
+<div class="text-center">
+<p class="text-xl font-bold text-[#2D3436]">1.2k</p>
+<p class="text-sm font-medium text-[#A8A8B3]">Followers</p>
+</div>
+<div class="text-center">
+<p class="text-xl font-bold text-[#2D3436]">156</p>
+<p class="text-sm font-medium text-[#A8A8B3]">Following</p>
+</div>
+</div>
+</div>
+<!-- Post Grid -->
+<div class="mt-6 w-full px-1">
+<!-- Tabs -->
+<div class="flex justify-around border-t border-b border-[#f4e7e7] py-2 mb-1">
+<button class="p-2 border-b-2 border-primary text-primary">
+<span class="material-symbols-outlined icon-fill" data-icon="grid_on">grid_on</span>
+</button>
+<button class="p-2 text-[#A8A8B3]">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="grid grid-cols-3 gap-1">
+<div class="aspect-square bg-gray-200">
+<img class="w-full h-full object-cover" data-alt="dogs running in a grassy field on a sunny day" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDewBdkhaU6ZNA9s76dlalfZTPEbSIPpzFjCWH1zJsjO2j3DUkgSPCPM8w0_Sweufe0L310CAp-moO4e4b-eJQK9Ww6KQuR2Y2GF9ON-PkRNKkuT_501HB2snnd5H9MxyV9ouT8ZkJUCl95tiPiQanTwo9ajlw3LWTxN390CTdwiNtI4hLn0daFiRBBTprmuaCXnDACXYhOOFm5pYBoWb2gQrCAs8ZMnA-jxq_dfj3ER3SkAHtfc7YWVadYvaggdElA6w261IkqNnc"/>
+</div>
+<div class="aspect-square bg-gray-200">
+<img class="w-full h-full object-cover" data-alt="corgi sleeping belly up on a soft blanket" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhfHlgyAhwTXMgScusuJzrZ1zqcKVw8uSOSoyVQzNS4Mrp3yn8bD-d7HPhdhrHjeJX4GeJbShu63ErnBoXHn2hKvOTvx5Yih89ELMSUYMoBayvrxqyIQkzuJuZ7b8fTukd_SmdPpPYRPto1emOIDpgxBxthpdoLXP0UegPqPL3AfaTj0UHjvh2Nv321GvaSBt4Bsy0ROa9Ecgv81izuaXu0FtBvMEkW2_r0WdHn7AcfTHEQFDCTZ42WEitJ7-MX0ka_mz0Rj5wf8c"/>
+</div>
+<div class="aspect-square bg-gray-200">
+<img class="w-full h-full object-cover" data-alt="dog wearing a tiny party hat looking confused" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBc8JYzbo5X_SSJg7sdZmGGqygBR-j3uPGfcJvVqcCAkSM3MXrKtxx7PhrQN63UBPuhWV5RzAKCYSKlZPVt2atkL0U7bl-FsGj6n9FmGHmAWUrn1eeNG89h0o8649dMQokKJ5blE-pnaKoi48nUCCELlmFVLp7LqZc9k85XrSye2Klo8vOCmkMexZAWN3PFLlOX9jOEwa5Q_WD55tTG3sM4eic1bZDFXdEZq-pdAP2yZhLRLsyIk3D8wJuLG2MZfv8-HLje9fK8LdA"/>
+</div>
+<div class="aspect-square bg-gray-200">
+<img class="w-full h-full object-cover" data-alt="close up of dog snout with mud on it" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANkRqVQfTTkoSWUaLRS21OsqG7Prm-oqpn9_hPusHlEbnxT6OMDsBA37aiohpsZ-fcL-VC6jWkZsKKYxCpnayi3EFvXKTMa4McX6pkddWXHGECUvc9NW_MV0gdECCLu5bHJIvRfMu2LdAvpKzWpbNvcVU6E4fgkbm7VshZwgAN5UtftuiSZezcY4SE3_Ac6nTg-7Y9Ud5_lo0FKYvewqGSoSQVk9zY8Tga6_QlK1EllPmV8CRZvACEmVfks-q2PZIjhJq1OEqoDw0"/>
+</div>
+<div class="aspect-square bg-gray-200">
+<img class="w-full h-full object-cover" data-alt="dog sitting in a pile of autumn leaves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzXjDSDnnZbzI-7i25kf7qywkocNvrIAA6kvgzIsj_IptMrY5gxEDD3Fw4jrJRSci2Mc_W0ppnQAuGi4HgNX9Yl7WooZ1yfnEb0bYiQx5NUFzQBIkPBabJPKHoOjdw1fK9jvXO-pel1LZD2lxlJzYolPwHSVjO42h6KId33OD18RR6f0u0WM7eiJw1IT2olLjpH2zQJc7on8XLwCgVCTtqm2oUpzKvvbtTwuv_QTq0cliSmxCLqEL_oPQx01JjP4srnUEBnpKUU18"/>
+</div>
+<div class="aspect-square bg-gray-200">
+<img class="w-full h-full object-cover" data-alt="corgi looking out a car window with wind blowing ears" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9M7fQXS-Gkv6nfMYjnAFBhSYWxvQMbjqPfrbSgFSv3G97uQmHzn8prAqGlMP2vDXmAiDYP0ozr-N7c7FLT9om_aEgArq_959JtTwdchl4wlpCJTpUinQ4tur7HxpvWiapQ3gTPUU73Pe9R1gMZ2m3fLuAy7w8B8uOtp51ie7L6Nv5wzPYVo3Av7eXCyM3r1GdfY2TlcgWxaFiZsWDoKpsuSH9lJCLwQYVL95OtCB8chyFkflpaK30s_Kw1Ucv-ew_TZbwpXRvB_0"/>
+</div>
+</div>
+</div>
+<!-- Shared Bottom Navigation (Included as this is a destination screen) -->
+<div class="fixed bottom-0 w-full max-w-[480px] z-50">
+<div class="flex gap-2 border-t border-[#f4e7e7] bg-[#fcf8f8] px-4 pb-3 pt-2">
+<a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#9c4949]" href="#">
+<div class="text-[#9c4949] flex h-8 items-center justify-center" data-icon="House" data-size="24px" data-weight="regular">
+<span class="material-symbols-outlined">home</span>
+</div>
+</a>
+<a class="just flex flex-1 flex-col items-center justify-end gap-1 text-[#9c4949]" href="#">
+<div class="text-[#9c4949] flex h-8 items-center justify-center" data-icon="MagnifyingGlass" data-size="24px" data-weight="regular">
+<span class="material-symbols-outlined">search</span>
+</div>
+</a>
+<a class="just flex flex-1 flex-col items-center justify-end gap-1 rounded-full text-[#1c0d0d]" href="#">
+<div class="text-[#1c0d0d] flex h-8 items-center justify-center" data-icon="User" data-size="24px" data-weight="fill">
+<span class="material-symbols-outlined icon-fill">person</span>
+</div>
+</a>
+</div>
+<div class="h-5 bg-[#fcf8f8]"></div>
+</div>
+<!-- Hidden Logout Modal Overlay (For demonstration structure) -->
+<!-- 
+        <div class="fixed inset-0 bg-[#2D3436]/50 backdrop-blur-sm z-[100] flex items-center justify-center p-6 hidden">
+            <div class="bg-white rounded-[32px] p-8 w-full max-w-[340px] flex flex-col items-center text-center shadow-float">
+                <div class="w-24 h-24 bg-[#FFF8F0] rounded-full flex items-center justify-center mb-4">
+                     <span class="material-symbols-outlined text-[48px] text-[#A8A8B3]">sentiment_dissatisfied</span>
+                </div>
+                <h2 class="text-2xl font-bold text-[#2D3436] mb-2">Leaving so soon?</h2>
+                <p class="text-[#A8A8B3] mb-8 font-medium">Are you sure you want to log out? Your furry friends will miss you!</p>
+                <button class="w-full bg-primary text-white font-bold py-3 rounded-full mb-3 shadow-soft">Logout</button>
+                <button class="w-full bg-[#FFF8F0] text-[#2D3436] font-bold py-3 rounded-full">Cancel</button>
+            </div>
+        </div>
+        -->
+</div>
+</body></html>
