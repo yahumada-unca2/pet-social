@@ -4,7 +4,7 @@
 Pet Social es una aplicación móvil que funciona como una red social para mascotas. Permite a los usuarios crear perfiles de sus mascotas, realizar publicaciones, conectarse con otros usuarios y ver un feed de actividades. Está diseñada para ofrecer una experiencia interactiva y amigable orientada a los dueños de mascotas.
 
 ## Tecnologías utilizadas
-- **Frontend:** React Native, Expo (Expo Router), React Hooks
+- **Frontend:** React Native, Expo Web, React Hooks
 - **Backend / Base de datos:** Supabase (Autenticación, Base de datos PostgreSQL, Storage)
 - **Lenguaje:** TypeScript / JavaScript
 - **Estilos / Componentes:** React Native Reanimated, Expo Vector Icons
@@ -25,14 +25,14 @@ Pet Social es una aplicación móvil que funciona como una red social para masco
 3. **Configurar las variables de entorno:**
    Asegúrate de configurar correctamente tu conexión a Supabase (URLs y claves anónimas) en el archivo correspondiente (por ejemplo .env o dentro de lib/supabase.ts).
 
-4. **Ejecutar la aplicación:**
+4. **Ejecutar la aplicación (Entorno Web):**
    `ash
-   npx expo start
+   npm run web
    `
-   - Escanea el código QR con **Expo Go** (Android) o la app de Cámara (iOS).
-   - Presiona **a** para abrir en un emulador de Android.
-   - Presiona **i** para abrir en un simulador de iOS.
-   - Presiona **w** para abrir en la web.
+   También puedes usar de manera alternativa:
+   `ash
+   npx expo start --web
+   `
 
 ## Nombre del estudiante
-- **Nombre y Apellido:** [COMPLETAR AQUI]
+- **Nombre y Apellido:** Ahumada Yonatan
