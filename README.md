@@ -29,10 +29,7 @@ Pet Social es una aplicación móvil que funciona como una red social para masco
    `ash
    npm run web
    `
-   También puedes usar de manera alternativa:
-   `ash
-   npx expo start --web
-   `
+
 
 ## Nombre del estudiante
-- **Nombre y Apellido:** Ahumada Yonatan
+- **Nombre y Apellido:** Ahumada Yonatan Gabriel
