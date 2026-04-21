@@ -33,6 +33,10 @@ export default function AuthScreen() {
         provider: 'google',
         options: {
           redirectTo: redirectUrl,
+          // Forzar que Google pregunte con qué cuenta iniciar sesión
+          queryParams: {
+            prompt: 'select_account'
+          },
           // En web, dejamos que Supabase redirija directamente. En móvil, manejamos la URL con WebBrowser.
           skipBrowserRedirect: Platform.OS !== 'web', 
         },
